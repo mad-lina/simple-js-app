@@ -8,6 +8,14 @@ let pokemonList=[
   {name:'Nidoran', height:0.4, type:['Poison-point', 'Hustle']}
 ];
 
+//for loop to print all three names and heights
+for(let i=0; i<=(pokemonList.length-1); i++){
 
-//check code accuracy
-document.write(pokemonList[2].type);
+  //check if height is tall and comment
+  if(pokemonList[i].height<1.6){
+  document.write(`${pokemonList[i].name} (height: ${pokemonList[i].height}) `);}
+  else{
+  document.write(`${pokemonList[i].name} (height: ${pokemonList[i].height}) -So Tall!! `);}
+
+
+}
