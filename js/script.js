@@ -8,14 +8,23 @@ let pokemonList=[
   {name:'Nidoran', height:0.4, type:['Poison-point', 'Hustle']}
 ];
 
-//for loop to print all three names and heights
-for(let i=0; i<=(pokemonList.length-1); i++){
+//Foreach loop with arrow function
+pokemonList.forEach( poke =>
+  {
+    if(poke.height<1.6){
+    document.write(`<div> ${poke.name} (height: ${poke.height}) </div>`)
+    }
+    else{
+    document.write(`<div> ${poke.name} (height: ${poke.height}) -So Tall!! </div>`)
+    }
+  }
+);
 
-  //check if height is tall and comment
-  if(pokemonList[i].height<1.6){
-  document.write(`${pokemonList[i].name} (height: ${pokemonList[i].height}) `);}
-  else{
-  document.write(`${pokemonList[i].name} (height: ${pokemonList[i].height}) -So Tall!! `);}
 
+/*Foreach loop practice without arrow function
+function pokeLoopfunction(poke){
+
+document.write(`${poke.name} (height: ${poke.height}) `);
 
 }
+pokemonList.forEach(pokeLoopfunction);*/
