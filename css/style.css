@@ -10,3 +10,12 @@ body{
   padding: 10px;
   margin:10px;
 }
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  /* CSS for modal container - add your own desired CSS styles here */
+  display: block;
+}
