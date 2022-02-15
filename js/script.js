@@ -1,4 +1,3 @@
-
 //pokemon IIFE
 let pokemonRepo=(function(){
     let pokemonList=[];
@@ -31,13 +30,13 @@ let pokemonRepo=(function(){
       let imageElementBack = $('<img class="modal-img" style="width:50%">');
       imageElementBack.attr("src", pokemon.imageUrlBack);
 
-      let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
+      let heightElement = $('<p>' + 'height : ' + pokemon.height + '</p>');
       // //creating element for weight in modal content
-      let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
+      let weightElement = $('<p>' + 'weight : ' + pokemon.weight + '</p>');
       // //creating element for type in modal content
-      let typesElement = $("<p>" + "types : " + pokemon.types + "</p>");
+      let typesElement = $('<p>' + 'types : ' + pokemon.types + '</p>');
       // //creating element for abilities in modal content
-      let abilitiesElement = $("<p>" + "abilities : " + pokemon.abilities + "</p>");
+      let abilitiesElement = $('<p>' + 'abilities : ' + pokemon.abilities + '</p>');
 
       modalTitle.append(nameElement);
       modalBody.append(imageElementFront);
