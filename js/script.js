@@ -7,7 +7,7 @@ let pokemonRepo=(function(){
     //Function called when button is clicked
     function showDetails(pokemon){
       loadDetails(pokemon).then(function () {
-        console.log("showDetails", pokemon);
+        console.log('showDetails', pokemon);
         //A modal when pokemon button is clicked
         showModal(pokemon);
       });
@@ -25,10 +25,10 @@ let pokemonRepo=(function(){
       let nameElement = $('<h1>' + pokemon.name + '</h1>');
 
       let imageElementFront = $('<img class="modal-img" style="width:50%">');
-      imageElementFront.attr("src", pokemon.imageUrlFront);
+      imageElementFront.attr('src', pokemon.imageUrlFront);
 
       let imageElementBack = $('<img class="modal-img" style="width:50%">');
-      imageElementBack.attr("src", pokemon.imageUrlBack);
+      imageElementBack.attr('src', pokemon.imageUrlBack);
 
       let heightElement = $('<p>' + 'height : ' + pokemon.height + '</p>');
       // //creating element for weight in modal content
@@ -50,19 +50,19 @@ let pokemonRepo=(function(){
     //Using bootstrap to create a 'card' class for each pokemon
     function addListItem(pokemon){
       pokemonRepo.loadDetails(pokemon).then(function () {
-        var $row = $(".row");
+        let $row = $('.row');
 
-        var $card = $('<div class="card col-sm-4" style="width:400px"></div>');
-        var $image = $('<img class="card-img-top" alt="Card image" style="width:20%" />');
-        $image.attr("src", pokemon.imageUrlFront);
-        var $cardBody = $('<div class="card-body"></div>');
-        var $cardTitle = $("<h4 class='card-title' >" + pokemon.name + "</h4>");
-        var $seeProfile = $(
+        let $card = $('<div class="card col-sm-4" style="width:400px"></div>');
+        let $image = $('<img class="card-img-top" alt="Card image" style="width:20%" />');
+        $image.attr('src', pokemon.imageUrlFront);
+        let $cardBody = $('<div class="card-body"></div>');
+        let $cardTitle = $('<h4 class=\'card-title\' >' + pokemon.name + '</h4>');
+        let $seeProfile = $(
           '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pokemonModal">See Profile</button>'
         );
 
         //Not sure how to implement aria
-        var ariaLabel = $('aria-label');
+        let ariaLabel = $('aria-label');
 
         $row.append($card);
         //Append the image to each card
@@ -71,7 +71,7 @@ let pokemonRepo=(function(){
         $cardBody.append($cardTitle);
         $cardBody.append($seeProfile);
 
-        $seeProfile.on("click", function (event) {
+        $seeProfile.on('click', function (event) {
           showDetails(pokemon);
         });
       });
@@ -124,11 +124,11 @@ let pokemonRepo=(function(){
         item.height = details.height;
         item.weight = details.weight;
         item.types = [];
-        for (var i = 0; i < details.types.length; i++) {
+        for (let i = 0; i < details.types.length; i++) {
           item.types.push(details.types[i].type.name);
         }
         item.abilities = [];
-        for (var i = 0; i < details.abilities.length; i++) {
+        for (let i = 0; i < details.abilities.length; i++) {
           item.abilities.push(details.abilities[i].ability.name);
         }
       }).catch(function (e) {
