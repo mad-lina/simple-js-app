@@ -1,9 +1,0 @@
-{
-    "env": {
-        "es6": true,
-    },
-    "rules": {
-        "quotes": ["error", "single"],
-        "no-var": ["error"]
-    }
-}
